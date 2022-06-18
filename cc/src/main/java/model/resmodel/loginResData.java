@@ -12,6 +12,7 @@ public class loginResData  {
 	@JsonProperty("access_token")
     private String accessToken;
 
+	@JsonProperty ("user")
 	private userData user;
 
 	@JsonProperty("token_type")

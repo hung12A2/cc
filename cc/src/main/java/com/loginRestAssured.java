@@ -14,6 +14,7 @@ import model.resUnitTest.resUnitTest;
 import model.resmodel.loginResModel;
 import model.constant.constant.Request.RequestApiLogin;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
@@ -43,8 +44,9 @@ public class loginRestAssured extends baseRestAssured {
 	        rut.setName("API_LOGIN_000");
 	        rut.setOutput(res.asPrettyString());
 	        
-	        assert resObj.getCode() == 1000;
-	        assert resObj.getMessage().equals("OK");
+			assertFalse("code != 1000 ", resObj.getCode() != 1000);
+			assertFalse("mess != OK",  !resObj.getMessage().equals("OK"));
+	
 	        // not null user data
 	        assertNotNull(resObj.getData().getUser());
 	        // not null access token
@@ -86,7 +88,7 @@ public class loginRestAssured extends baseRestAssured {
 
 			
 			loginResModel resObj = mapper.readValue(res.asString(), loginResModel.class);
-			assert resObj.getCode() == 1001;
+			assertFalse("code != 1001 ", resObj.getCode() != 1001 );
 			
 			
 		} catch (JsonProcessingException e) {
@@ -122,7 +124,7 @@ public class loginRestAssured extends baseRestAssured {
 	        rut.setOutput(res.asPrettyString());
 			
 			loginResModel resObj = mapper.readValue(res.asString(), loginResModel.class);
-			assert resObj.getCode() == 1002;
+			assertFalse("code != 1002 ", resObj.getCode() != 1002);
 			
 		}catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
