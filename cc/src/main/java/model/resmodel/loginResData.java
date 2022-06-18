@@ -16,7 +16,7 @@ public class loginResData  {
 	private userData user;
 
 	@JsonProperty("token_type")
-	private String tokenType;
+	private String token_Type;
 
 	@JsonProperty("expires_in")
 	private int expiresIn;
