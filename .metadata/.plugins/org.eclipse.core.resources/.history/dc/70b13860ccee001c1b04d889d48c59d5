@@ -1,0 +1,7 @@
+package cc;
+
+import io.restassured.*;
+
+public class Main {
+
+}
